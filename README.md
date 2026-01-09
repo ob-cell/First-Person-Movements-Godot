@@ -1,8 +1,6 @@
 <p align="center">
   <img src="banner.png" />
 </p>
-<br>
-<br>
 <hr>
 Easy to use First Person Movements for Godot 4
 <br>
@@ -30,8 +28,6 @@ Alternatively, download the source as a ZIP file by clicking the green Code butt
 * Click the Import button.
 * Navigate to the folder where you cloned the repo and select the project.godot file.
 * Click Import & Edit.
-<br>
-<br>
 <hr>
 <p align="center">
   <img src="banner.png" />
