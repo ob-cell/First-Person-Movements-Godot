@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://1taacbbsyouh"]
+
+[ext_resource type="Script" uid="uid://csjgxyv2570go" path="res://scripts/player.gd" id="1_rwgxs"]
+[ext_resource type="Texture2D" uid="uid://bfl1jgppw25mm" path="res://textures/terrain/terrain.png" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://cm5nkn2u2k48d" path="res://textures/terrain/box_2.png" id="3_4wyf3"]
+[ext_resource type="Script" uid="uid://b1lgcm3qlunae" path="res://scripts/fpscounter.gd" id="4_k0juu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k0juu"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_71j4m"]
+sky_material = SubResource("ProceduralSkyMaterial_k0juu")
+
+[sub_resource type="Environment" id="Environment_qfnet"]
+background_mode = 3
+sky = SubResource("Sky_71j4m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fj7yv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7141"]
+albedo_texture = ExtResource("2_4wyf3")
+albedo_texture_force_srgb = true
+uv1_scale = Vector3(60, 60, 60)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+albedo_texture = ExtResource("3_4wyf3")
+albedo_texture_force_srgb = true
+
+[node name="world" type="Node3D"]
+
+[node name="light" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_volumetric_fog_energy = 2.485
+shadow_enabled = true
+directional_shadow_max_distance = 958.0
+
+[node name="worldenvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_qfnet")
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0301453, 0)
+script = ExtResource("1_rwgxs")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="player"]
+shape = SubResource("CapsuleShape3D_fj7yv")
+
+[node name="Head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6224141, 0)
+
+[node name="Camera" type="Camera3D" parent="player/Head"]
+
+[node name="environment" type="Node3D" parent="."]
+
+[node name="Box" type="CSGBox3D" parent="environment"]
+transform = Transform3D(43.803265, 0, 0, 0, 0.9962949, 0, 0, 0, 38.82217, 0, -0.72208285, 0)
+use_collision = true
+size = Vector3(1, 0.5633545, 1)
+material = SubResource("StandardMaterial3D_i7141")
+
+[node name="BigBox2" type="CSGBox3D" parent="environment"]
+transform = Transform3D(4.938456, 0, -2.4746678, 0, 5.3653946, 0, 2.2869573, 0, 4.6951127, 15.779341, 2.3768704, 11.936476)
+use_collision = true
+material = SubResource("StandardMaterial3D_qfnet")
+
+[node name="BigBox" type="CSGBox3D" parent="environment"]
+transform = Transform3D(2.3208447, 0, -0.57699215, 0, 2.316332, 0, 0.54101694, 0, 2.4751704, -3.630663, 0.71671677, -6.30107)
+use_collision = true
+material = SubResource("StandardMaterial3D_qfnet")
+
+[node name="fpscounter" type="CanvasLayer" parent="."]
+
+[node name="Counter" type="Label" parent="fpscounter"]
+offset_right = 58.0
+offset_bottom = 32.0
+text = "FPS:"
+script = ExtResource("4_k0juu")
