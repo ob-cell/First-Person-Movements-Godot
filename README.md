@@ -1,4 +1,4 @@
-<center>![Banner](/banner.png)</center>
+![Banner](/banner.png)
 <br>
 <br>
 # First Person Movements for Godot 4
@@ -31,4 +31,4 @@ Alternatively, download the source as a ZIP file by clicking the green Code butt
 * Click Import & Edit.
 <br>
 <br>
-<center>![Banner](/banner.png)</center>
+![Banner](/banner.png)
