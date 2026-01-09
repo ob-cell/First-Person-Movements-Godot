@@ -31,4 +31,4 @@ Alternatively, download the source as a ZIP file by clicking the green Code butt
 * Click Import & Edit.
 <br>
 <br>
-![Banner](/banner.png)
+![Banner](banner.png)
