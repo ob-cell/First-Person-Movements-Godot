@@ -7,8 +7,9 @@
 Easy to use First Person Movements for Godot 4
 <br>
 <br>
-![Project Showcare](/godot.gif)
-
+<p align="center">
+  <img src="godot.gif" />
+</p>
 # Installation
 
 ### 1. Prerequisites:
