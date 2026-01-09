@@ -10,7 +10,6 @@ Easy to use First Person Movements for Godot 4
 <p align="center">
   <img src="godot.gif" />
 </p>
-# Installation
 
 ### 1. Prerequisites:
 **Godot Engine:** Download and install Godot 4. You can find it at godotengine.org.
@@ -31,3 +30,9 @@ Alternatively, download the source as a ZIP file by clicking the green Code butt
 * Click the Import button.
 * Navigate to the folder where you cloned the repo and select the project.godot file.
 * Click Import & Edit.
+<br>
+<br>
+<hr>
+<p align="center">
+  <img src="banner.png" />
+</p>
